@@ -10,12 +10,12 @@ import UIKit
 
 private let longRatio: CGFloat = 0.65
 private let shortRatio: CGFloat = 0.35
-
+/// 长线的Cell
 class LongLineCell: UICollectionViewCell {
     let textLabel = UILabel()
-
+    
     private let line = UIView()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -25,7 +25,7 @@ class LongLineCell: UICollectionViewCell {
         contentView.addSubview(textLabel)
         line.backgroundColor = color
         contentView.addSubview(line)
-
+        
         addConstraint()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -50,10 +50,10 @@ extension LongLineCell {
         line.heightAnchor.constraint(equalToConstant: lineHeight).isActive = true
     }
 }
-
+/// 短线的Cell
 class ShortLineCell: UICollectionViewCell {
     private let line = UIView()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         line.backgroundColor = UIColor(white: 0.8, alpha: 1)
@@ -70,7 +70,7 @@ extension ShortLineCell {
     private var lineHeight: CGFloat {
         return bounds.height * shortRatio
     }
-
+    
     private func addConstraint() {
         line.translatesAutoresizingMaskIntoConstraints = false
         line.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
@@ -79,3 +79,4 @@ extension ShortLineCell {
         line.heightAnchor.constraint(equalToConstant: lineHeight).isActive = true
     }
 }
+

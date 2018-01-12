@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         let rulerView = RulerView()
         view.addSubview(rulerView)
         rulerView.ruler.delegate = self
-        rulerView.ruler.maxPrice = 1000
-        rulerView.ruler.selectedPrice = 1000
+        rulerView.ruler.maxPrice = 10000
+        rulerView.ruler.selectedPrice = 10000
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,3 +36,4 @@ extension ViewController: RulerDelegate {
         label.text = "\(currentPrice)"
     }
 }
+
